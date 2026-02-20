@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oskar & Josefin — 12 september 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:     #f5f2ec;
+      --off-white: #ede9e0;
+      --cobalt-lt: #dde7f0;
+      --cobalt:    #3a6b9e;
+      --cobalt-dk: #1e4570;
+      --amber:     #d4933a;
+      --amber-lt:  #f0dab8;
+      --sky:       #6aaccc;
+      --navy:      #1a2440;
+      --ivory:     #f8f4ea;
+      --text:      #1a1e2e;
+      --muted:     #5a6070;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-weight: 300; line-height: 1.75; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; justify-content: center; gap: 2rem; padding: 1rem 2rem;
+      background: rgba(245,242,236,0.88); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(58,107,158,0.18);
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    nav a { text-decoration: none; color: var(--muted); transition: color 0.3s; }
+    nav a:hover { color: var(--cobalt); }
+
+    .hero-wrap { position: relative; width: 100%; height: 100svh; min-height: 520px; overflow: hidden; }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+    .hero-wrap::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 110% 50% at 50% 0%, rgba(245,242,236,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 40% at 10% 50%, rgba(212,147,58,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 40% at 90% 50%, rgba(212,147,58,0.1) 0%, transparent 60%),
+        linear-gradient(to bottom, transparent 30%, rgba(26,36,64,0.85) 100%);
+    }
+    .hero-text { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; text-align: center; padding: 2rem 2rem 4.5rem; }
+    .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.8rem; opacity: 0; animation: fadeUp 1s 0.4s forwards; }
+    .hero-names { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 11vw, 7.5rem); font-weight: 400; line-height: 1; color: var(--ivory); opacity: 0; animation: fadeUp 1s 0.7s forwards; text-shadow: 0 2px 24px rgba(26,36,64,0.5); }
+    .hero-names em { font-style: italic; color: #f0c87a; }
+    .hero-amp { font-family: 'Playfair Display', serif; font-style: italic; color: var(--sky); font-size: 0.62em; display: inline-block; margin: 0 0.2em; }
+    .hero-meta { margin-top: 1.3rem; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(0.9rem, 2.5vw, 1.2rem); color: rgba(245,242,236,0.78); opacity: 0; animation: fadeUp 1s 1s forwards; }
+    .hero-scroll { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 3; font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--amber); opacity: 0; animation: fadeUp 1s 1.6s forwards; }
+    .hero-scroll::after { content: ''; display: block; width: 1px; height: 34px; background: var(--amber); margin: 0.5rem auto 0; animation: pulse 2s 2.2s ease-in-out infinite; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { opacity: 0.3; transform: scaleY(0.6); } 50% { opacity: 1; transform: scaleY(1); } }
+
+    .wrap { max-width: 880px; margin: 0 auto; padding: 5rem 2rem; }
+    .sec-bg { padding: 5rem 0; }
+    .sec-bg .wrap { padding-top: 0; padding-bottom: 0; }
+    .label { font-size: 0.67rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cobalt); margin-bottom: 0.8rem; }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 400; line-height: 1.2; margin-bottom: 1.4rem; }
+    h2 em { font-style: italic; color: var(--amber); }
+    .rule { width: 36px; height: 1px; background: var(--cobalt-lt); margin: 1rem 0 1.8rem; }
+    p { color: var(--muted); margin-bottom: 0.9rem; }
+    strong { color: var(--text); font-weight: 400; }
+    a { color: var(--cobalt); }
+    a:hover { color: var(--cobalt-dk); }
+
+    .wc-divider {
+      height: 55px;
+      background:
+        radial-gradient(ellipse 28% 80% at 18% 50%, rgba(58,107,158,0.25) 0%, transparent 70%),
+        radial-gradient(ellipse 22% 80% at 50% 40%, rgba(212,147,58,0.2) 0%, transparent 70%),
+        radial-gradient(ellipse 28% 80% at 82% 60%, rgba(106,172,204,0.2) 0%, transparent 70%);
+    }
+
+    #valkomna {
+      background:
+        radial-gradient(ellipse 60% 50% at 8% 50%, rgba(58,107,158,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 60% at 92% 30%, rgba(212,147,58,0.08) 0%, transparent 60%),
+        var(--cream);
+    }
+
+    #info { background: var(--cobalt-lt); }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; margin-top: 2.5rem; }
+    .card {
+      background: var(--ivory); padding: 2rem 1.6rem;
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(to right, var(--cobalt), var(--sky), var(--amber)); }
+    .card-emoji { font-size: 1.8rem; margin-bottom: 0.7rem; display: block; }
+    .card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 0.6rem; color: var(--text); }
+    .card p { font-size: 0.87rem; margin-bottom: 0.4rem; }
+    .card a { display: inline-block; margin-top: 0.3rem; font-size: 0.8rem; word-break: break-all; }
+    .code { display: inline-block; background: var(--amber-lt); border: 1px solid rgba(212,147,58,0.3); padding: 0.2rem 0.7rem; font-size: 0.9rem; letter-spacing: 0.08em; color: var(--cobalt-dk); margin: 0.4rem 0; font-weight: 400; }
+    .note { font-size: 0.78rem; font-style: italic; color: var(--muted); margin-top: 0.5rem; }
+
+    .map-wrap { margin-top: 1.5rem; width: 100%; aspect-ratio: 16/7; overflow: hidden; border: 1px solid rgba(58,107,158,0.2); }
+    .map-wrap iframe { width: 100%; height: 100%; border: 0; filter: saturate(80%) sepia(10%); }
+
+    #osa { background: var(--navy); padding: 5rem 0; }
+    #osa .label { color: var(--sky); }
+    #osa h2 { color: var(--ivory); }
+    #osa h2 em { color: var(--amber); }
+    #osa p { color: rgba(245,242,236,0.55); }
+    .deadline-tag { display: inline-block; border: 1px solid rgba(106,172,204,0.4); color: var(--sky); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.4rem 1rem; margin: 0.8rem 0 2rem; }
+    form { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    label { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,242,236,0.4); }
+    input, select, textarea { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.13); padding: 0.8rem 1rem; color: var(--ivory); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 300; outline: none; transition: border-color 0.3s; width: 100%; }
+    input:focus, select:focus, textarea:focus { border-color: var(--sky); }
+    select option { background: var(--navy); }
+    textarea { resize: vertical; min-height: 80px; }
+    .radio-group { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .radio-label { display: flex; align-items: center; gap: 0.45rem; cursor: pointer; font-size: 0.88rem; color: rgba(245,242,236,0.6); text-transform: none; letter-spacing: 0; }
+    input[type="radio"] { width: 15px; height: 15px; accent-color: var(--sky); padding: 0; }
+    .btn { align-self: flex-start; margin-top: 0.5rem; padding: 0.9rem 2.2rem; background: transparent; border: 1px solid var(--sky); color: var(--sky); font-family: 'DM Sans', sans-serif; font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.3s, color 0.3s; }
+    .btn:hover { background: var(--sky); color: var(--navy); }
+    .success-msg { display: none; padding: 1.2rem 1.5rem; border: 1px solid var(--sky); color: var(--sky); font-size: 0.9rem; margin-top: 1rem; }
+
+    footer { text-align: center; padding: 3rem 2rem 4rem; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.05rem; color: var(--muted); background: var(--off-white); }
+    footer span { color: var(--amber); }
+
+    @media (max-width: 580px) { .form-row { grid-template-columns: 1fr; } nav { gap: 1rem; font-size: 0.64rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#valkomna">Välkommen</a>
+  <a href="#info">Info</a>
+  <a href="#karta">Hitta hit</a>
+  <a href="#osa">OSA</a>
+</nav>
+
+<div class="hero-wrap">
+  <img class="hero-img" src="joskar.jpg" alt="Oskar och Josefin" />
+  <div class="hero-text">
+    <p class="hero-eyebrow">✨ Vi gifter oss ✨</p>
+    <h1 class="hero-names">
+      <em>Oskar</em>
+      <span class="hero-amp">&amp;</span>
+      <em>Josefin</em>
+    </h1>
+    <p class="hero-meta">Lördagen den 12 september 2026 · Töringe, Falkenberg</p>
+  </div>
+  <div class="hero-scroll">Scrolla</div>
+</div>
+
+<section id="valkomna">
+  <div class="wrap">
+    <p class="label">Hej vän 👋</p>
+    <h2>Vi är så glada<br><em>att du är här</em></h2>
+    <div class="rule"></div>
+    <p>Det här är platsen för allt du behöver veta inför vår dag. Kika igenom, svara på OSA och hör av dig om du undrar något!</p>
+    <p>Platsen är begränsad och inbjudan personlig — vi är så glada att just du fick en. 🥹</p>
+  </div>
+</section>
+
+<div class="wc-divider"></div>
+
+<section id="info" class="sec-bg">
+  <div class="wrap">
+    <p class="label">Praktisk info</p>
+    <h2>Allt du<br><em>behöver veta</em></h2>
+
+    <div class="info-grid">
+
+      <div class="card">
+        <span class="card-emoji">🗓️</span>
+        <h3>När</h3>
+        <p>12 Sept 2026 kl 16:00</p>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">🌾</span>
+        <h3>Var</h3>
+        <p>Vi kommer hålla till hos våra vänner Hasse och Peder på deras underbara gård i Töringe utanför Falkenberg</p>
+        <p>Adress: Töringe Borgasgård, Töringe 414, 31195 Falkenberg</p>
+        <a href="#karta">→ Karta</a>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">🚌</span>
+        <h3>Res</h3>
+        <p>Vi skickar en buss från centrala Falkenberg vid 15.30 som skjutsar alla som vill till Töringe. Från festplatsen in till stan igen går två turer på kvällen, exakta tider kommer.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">🛏️</span>
+        <h3>Hur</h3>
+        <p>Boende finns inne i Falkenberg. Rabattkoden JOSKAR26 ger er 20% rabatt på både Grand Hotell och Hwitan. Ni bokar via hemsidor, telefon eller mail.</p>
+        <a href="https://www.grandhotelfalkenberg.se/" target="_blank">grandhotelfalkenberg.se</a><br>
+        <a href="https://www.hwitan.se/" target="_blank">hwitan.se</a>
+        <p class="note">Föredrar man ännu billigare bo finns Strawberry Stopover Falkenberg, dom har ingen kod för dom "har så låga priser ändå", hur tjänar Stordalen pengar egentligen?</p>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">💌</span>
+        <h3>Vilka</h3>
+        <p>Det är begränsat med plats, vi har inte kunnat bjuda alla vi önskar. Inbjudan är riktad till er som ryms.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">🍼</span>
+        <h3>Barn</h3>
+        <p>Det kommer inte direkt vara barnanpassat men måste dom med så är det så! Babsan kommer örla runt och säkert andra så det är inte hela världen.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">✨</span>
+        <h3>Kläder</h3>
+        <p>Det finaste du äger</p>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">🎤</span>
+        <h3>Kul</h3>
+        <p>Det kommer finnas en scen och en mikrofon. Har du en dröm att säga nåt kan vår toastmadame göra det till verklighet, hör av dig till Rebecca Sellergren Rosenlind på 070-814 32 03 eller rebecca@dramalogen.se</p>
+        <a href="tel:0708143203">070-814 32 03</a><br>
+        <a href="mailto:rebecca@dramalogen.se">rebecca@dramalogen.se</a>
+      </div>
+
+      <div class="card">
+        <span class="card-emoji">🎁</span>
+        <h3>Present</h3>
+        <p>Bara att ni tar er till Västkusten är present nog. Förutom ni som bor på Västkusten. Då ska presenten vara värd minst ett tusen kronor.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="wc-divider"></div>
+
+<section id="karta">
+  <div class="wrap">
+    <p class="label">Hitta hit 🗺️</p>
+    <h2>Töringe<br><em>Borgasgård</em></h2>
+    <div class="rule"></div>
+    <p>Töringe 414, 311 95 Falkenberg</p>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2142.3!2d12.4605!3d56.8705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c180e51234567%3A0x0!2sTöringe+414%2C+311+95+Falkenberg!5e0!3m2!1ssv!2sse!4v1700000000000!5m2!1ssv!2sse"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Töringe Borgasgård"></iframe>
+    </div>
+    <p style="margin-top:1rem; font-size:0.82rem; color:var(--muted);">💡 Vägbeskrivning skickas till alla gäster närmre inpå.</p>
+  </div>
+</section>
+
+<div class="wc-divider"></div>
+
+<section id="osa">
+  <div class="wrap">
+    <p class="label">OSA</p>
+    <h2>Kan du<br><em>komma?</em> 🥂</h2>
+    <p>Vi behöver ditt svar för att planera — svara så snart du kan!</p>
+    <div class="deadline-tag">⏰ Svara senast 1 juni 2026</div>
+
+    <!-- Registrera gratis på formspree.io och byt action-URL -->
+    <form id="osa-form" action="https://formspree.io/f/XXXXXXXX" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">Förnamn</label>
+          <input type="text" id="fname" name="förnamn" placeholder="Alex" required />
+        </div>
+        <div class="form-group">
+          <label for="lname">Efternamn</label>
+          <input type="text" id="lname" name="efternamn" placeholder="Svensson" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">E-post</label>
+        <input type="email" id="email" name="email" placeholder="alex@example.com" />
+      </div>
+      <div class="form-group">
+        <label>Kan du komma? 🎉</label>
+        <div class="radio-group">
+          <label class="radio-label"><input type="radio" name="närvaro" value="ja" required /> Ja, med glädje!</label>
+          <label class="radio-label"><input type="radio" name="närvaro" value="nej" /> Tyvärr inte 😢</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="antal">Antal personer (inkl. dig)</label>
+        <select id="antal" name="antal">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Vill du åka med bussen? 🚌</label>
+        <div class="radio-group">
+          <label class="radio-label"><input type="radio" name="buss" value="ja" /> Ja, hoppar på!</label>
+          <label class="radio-label"><input type="radio" name="buss" value="nej" /> Nej, tar mig dit själv</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="diet">Matpreferenser / allergier 🌿</label>
+        <input type="text" id="diet" name="matpreferenser" placeholder="Vegetarian, laktos, nötter..." />
+      </div>
+      <div class="form-group">
+        <label for="barn">Tar du med barn? (namn + ålder)</label>
+        <input type="text" id="barn" name="barn" placeholder="Lämna tomt om inga barn följer med" />
+      </div>
+      <div class="form-group">
+        <label for="message">Hälsning (valfritt) 💌</label>
+        <textarea id="message" name="hälsning" placeholder="Skriv något vackert..."></textarea>
+      </div>
+      <button type="submit" class="btn">Skicka svar →</button>
+    </form>
+    <div class="success-msg" id="success">🌟 Tack! Vi är så glada — vi ses den 12 september!</div>
+  </div>
+</section>
+
+<footer>Med all vår kärlek, <span>Oskar &amp; Josefin</span> 🌾 12 september 2026</footer>
+
+<script>
+  const form = document.getElementById('osa-form');
+  const success = document.getElementById('success');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        if (res.ok) { form.style.display = 'none'; success.style.display = 'block'; }
+        else { alert('Något gick fel — försök igen!'); }
+      } catch { alert('Kunde inte skicka. Kontrollera internetanslutningen.'); }
+    });
+  }
+</script>
+</body>
+</html>
